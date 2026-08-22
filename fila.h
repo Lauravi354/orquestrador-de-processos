@@ -35,3 +35,12 @@ typedef struct Fila{
     int *qnt;
 }fila;
 
+Fila *criar_fila();
+
+int adicionar_tarefa(Fila *fila, Tarefa tarefa);
+
+int remover_tarefa(Fila *fila, Tarefa *saida);
+
+int fila_vazia(Fila *fila);
+
+void liberar_fila(Fila *fila);
