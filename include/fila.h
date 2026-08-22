@@ -30,10 +30,10 @@ typedef struct Elemento{
 }Elemento;
 
 typedef struct Fila{
-    Elemento *incio;
+    Elemento *inicio;
     Elemento *fim;
     int *qnt;
-}fila;
+}Fila;
 
 Fila *criar_fila();
 
