@@ -77,3 +77,32 @@ int fila_vazia(Fila *fila){
     }
     return 0;
 }
+
+void liberar_fila(Fila *fila){
+
+    if (fila == NULL){
+        return;
+    }
+
+    Elemento *aux = fila->inicio;
+
+    while (aux != NULL){
+
+        Elemento *proximo = aux->next;
+
+        for (int i = 0; i < aux->tarefa.qtd_argumentos; i++){
+            free(aux->tarefa.argumentos[i]);
+        }
+
+        free(aux->tarefa.argumentos);
+        free(aux->tarefa.nome);
+        free(aux->tarefa.comando);
+        free(aux->tarefa.dependencias);
+
+        free(aux);
+
+        aux = proximo;
+    }
+
+    free(fila);
+}
