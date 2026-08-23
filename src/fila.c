@@ -70,3 +70,10 @@ int remover_tarefa(Fila *fila, Tarefa *saida){
     free(aux);
     return 0;
 }
+
+int fila_vazia(Fila *fila){
+    if (fila == NULL || fila->inicio == NULL){
+        return 1;
+    }
+    return 0;
+}
