@@ -16,11 +16,9 @@ typedef struct Tarefa {
     int qtd_argumentos;
 
     Status status;
-
-    double tempo_execucao;
-
-    int *dependencias;
-    int qtd_dependencias;
+    char *arquivo_entrada;
+    char *arquivo_saida;
+    int modo_saida;
 
 } Tarefa;
 
@@ -32,7 +30,7 @@ typedef struct Elemento{
 typedef struct Fila{
     Elemento *inicio;
     Elemento *fim;
-    int *qnt;
+    int qnt;
 }Fila;
 
 Fila *criar_fila();
