@@ -23,7 +23,7 @@ int adicionar_tarefa(Fila *fila, Tarefa tarefa){
     if (fila == NULL) {
         return -1;
     }
-    
+
     Elemento *novo = (Elemento*)malloc(sizeof(Elemento));
 
     if (novo == NULL){
@@ -46,4 +46,27 @@ int adicionar_tarefa(Fila *fila, Tarefa tarefa){
         
         return 0;
     }
+}
+
+int remover_tarefa(Fila *fila, Tarefa *saida){
+
+    if (fila == NULL || saida == NULL){
+        return -1;
+    }
+
+    if (fila->inicio == NULL){
+        return -1;
+    }
+
+    Elemento *aux = fila->inicio;
+    *saida = aux->tarefa;
+    fila->inicio = fila->inicio->next;
+
+    if (fila->inicio == NULL){
+        fila->fim = NULL;
+    }
+
+    fila->qnt--;
+    free(aux);
+    return 0;
 }
