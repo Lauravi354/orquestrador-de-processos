@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../include/tarefas.h"
-#include "../include/orquestrador.h"
+#include "tarefas.h"
+#include "orquestrador.h"
 
 int verificar_programa_existe(char *caminho_programa){
     if (access(caminho_programa, X_OK) == 0) {

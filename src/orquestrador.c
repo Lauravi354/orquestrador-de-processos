@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../include/orquestrador.h"
-#include "../include/tarefas.h"
-#include "../include/jobs.h"
-#include "../include/processos.h"
+#include "tarefas.h"
+#include "jobs.h"
+#include "processos.h"
+#include "orquestrador.h"
 
 Orquestrador* criar_orquestrador() {
     Orquestrador *orq = malloc(sizeof(Orquestrador));

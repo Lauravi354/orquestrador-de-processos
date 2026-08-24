@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "../include/jobs.h"
-#include "../include/orquestrador.h"
+#include "jobs.h"
+#include "orquestrador.h"
 #include <sys/wait.h>
 
 Job* buscar_job_por_id(Orquestrador *orq, int job_id) {
