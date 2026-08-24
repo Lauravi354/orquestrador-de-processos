@@ -1,3 +1,5 @@
+#ifndef TAREFAS_H
+#define TAREFAS_H
 #include <stdio.h>
 #include <stdlib.h>
 #include "fila.h"
@@ -10,3 +12,5 @@ int verificar_se_existe(Orquestrador *orq, char *nome_tarefa);
 int verificar_programa_existe(char *caminho_programa);
 
 void listar_tarefas(Orquestrador *orq);
+
+#endif

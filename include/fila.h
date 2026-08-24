@@ -1,3 +1,5 @@
+#ifndef FILA_H
+#define FILA_H
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -12,19 +14,19 @@ typedef struct Tarefa {
     char *nome;
     char *comando;
     char **argumentos;
-
+    
     int qtd_argumentos;
-
+    
     Status status;
     char *arquivo_entrada;
     char *arquivo_saida;
     int modo_saida;
-
+    
 } Tarefa;
 
 typedef struct Elemento{
     Tarefa tarefa;
-    Elemento *next;
+    struct Elemento *next;
 }Elemento;
 
 typedef struct Fila{
@@ -42,3 +44,5 @@ int remover_tarefa(Fila *fila, Tarefa *saida);
 int fila_vazia(Fila *fila);
 
 void liberar_fila(Fila *fila);
+
+#endif

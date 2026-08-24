@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <fcntl.h> 
 #include <sys/wait.h>
+#include "fila.h"
 
 void executar_tarefa_simples(Tarefa *tarefa) {
     if (tarefa == NULL) {

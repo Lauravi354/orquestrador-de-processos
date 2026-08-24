@@ -1,3 +1,5 @@
+#ifndef ORQUESTRADOR_H
+#define ORQUESTRADOR_H
 #include <stdio.h>
 #include <stdlib.h>
 #include "fila.h"
@@ -40,3 +42,5 @@ void listar_jobs(Orquestrador *orq);
 int aguardar_job(Orquestrador *orq, int ID);
 
 int redirecionar(Orquestrador *orq, char *nome_tarefa, char *tipo, char *arquivo);
+
+#endif
