@@ -1,0 +1,73 @@
+# ProcessFlow - Orquestrador de Processos
+
+Programa em C que implementa um orquestrador de processos com suporte a execução em background e gerenciamento de jobs.
+
+**Nota:** Esta é uma versão parcial do projeto. Nem todas as funcionalidades foram implementadas.
+
+## Compilação
+
+```bash
+make
+```
+
+## Execução
+
+```bash
+./bin/processflow
+```
+
+## Comandos Implementados ✅
+
+- `start <tarefa>` - Executar tarefa em background (não-bloqueante)
+- `jobs` - Listar todos os jobs em execução
+- `wait <job_id>` - Aguardar conclusão de um job específico
+- `exit` - Sair do programa
+
+## Comandos NÃO Implementados ❌
+
+- `task <nome> <programa> [argumentos...]` - Cadastro de tarefas
+- `run <tarefa>` - Execução bloqueante de tarefas
+- `input/output/append` - Redirecionamento de entrada/saída
+- `workdir` - Alteração de diretório de trabalho
+
+## Estrutura do Projeto
+orquestrador-de-processos/
+├── include/
+│ ├── fila.h (✅ Completo)
+│ ├── tarefas.h (✅ Completo)
+│ ├── jobs.h (✅ Completo)
+│ ├── processos.h (⏳ Parcial - só execução simples)
+│ └── orquestrador.h (⏳ Parcial)
+├── src/
+│ ├── fila.c (✅ Completo - 5 funções)
+│ ├── tarefas.c (✅ Completo - 4 funções)
+│ ├── jobs.c (✅ Completo - 5 funções)
+│ ├── processos.c (⏳ Parcial - 1 de 4 funções)
+│ ├── orquestrador.c (⏳ Parcial - 2 de 8 funções)
+│ └── main.c (⏳ Parcial - menu básico)
+├── Makefile
+└── README.md
+
+## O que Funciona
+
+1. **Estruturas de Dados:**
+   - Fila genérica (FIFO) com todas as operações
+   - Gerenciamento de tarefas cadastradas
+   - Gerenciamento de jobs em background
+
+2. **Execução em Background:**
+   - `start <tarefa>` cria um processo filho
+   - `jobs` lista os processos ativos
+   - `wait <job_id>` aguarda término usando waitpid()
+
+3. **Execução Simples:**
+   - Fork + exec de programas
+   - Redirecionamento de entrada (dup2)
+   - Redirecionamento de saída (dup2)
+
+## O que NÃO Funciona
+
+- Cadastro dinâmico de tarefas (task command está vazio)
+- Execução sequencial/paralela de múltiplas tarefas
+- Pipe entre tarefas
+- Alteração de diretório de trabalho
