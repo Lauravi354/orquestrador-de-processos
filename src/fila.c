@@ -97,8 +97,6 @@ void liberar_fila(Fila *fila){
         free(aux->tarefa.argumentos);
         free(aux->tarefa.nome);
         free(aux->tarefa.comando);
-        free(aux->tarefa.dependencias);
-
         free(aux);
 
         aux = proximo;
