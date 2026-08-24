@@ -19,3 +19,17 @@ Job* buscar_job_por_id(Orquestrador *orq, int job_id) {
 
     return NULL;
 }
+
+void listar_jobs(Orquestrador *orq) {
+    if (orq == NULL || orq->qtd_jobs == 0) {
+        printf("Nenhum job cadastrado.\n");
+        return;
+    }
+
+    for (int i = 0; i < orq->qtd_jobs; i++) {
+        printf("[%d] %d %s\n",
+               orq->jobs[i].job_id,
+               orq->jobs[i].pid,
+               orq->jobs[i].nome_tarefa);
+    }
+}
