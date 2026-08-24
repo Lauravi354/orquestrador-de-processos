@@ -53,3 +53,24 @@ Job* adicionar_job(Orquestrador *orq, int job_id, int pid, char *nome_tarefa) {
 
     return &orq->jobs[i];
 }
+
+int remover_job(Orquestrador *orq, int job_id) {
+    if (orq == NULL) {
+        return -1;
+    }
+
+    for (int i = 0; i < orq->qtd_jobs; i++) {
+        if (orq->jobs[i].job_id == job_id) {
+
+            for (int j = i; j < orq->qtd_jobs - 1; j++) {
+                orq->jobs[j] = orq->jobs[j + 1];
+            }
+
+            orq->qtd_jobs--;
+
+            return 0;
+        }
+    }
+
+    return -1;
+}
