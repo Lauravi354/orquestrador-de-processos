@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include "../include/jobs.h"
 #include "../include/orquestrador.h"
+#include <sys/wait.h>
 
 Job* buscar_job_por_id(Orquestrador *orq, int job_id) {
 
@@ -73,4 +74,22 @@ int remover_job(Orquestrador *orq, int job_id) {
     }
 
     return -1;
+}
+
+int aguardar_job(Orquestrador *orq, int job_id) {
+    if (orq == NULL) {
+        return -1;
+    }
+
+    Job *job = buscar_job_por_id(orq, job_id);
+
+    if (job == NULL) {
+        return -1;
+    }
+
+    if (waitpid(job->pid, NULL, 0) == -1) {
+        return -1;
+    }
+
+    return remover_job(orq, job_id);
 }
