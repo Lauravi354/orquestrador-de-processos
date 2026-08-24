@@ -33,3 +33,23 @@ void listar_jobs(Orquestrador *orq) {
                orq->jobs[i].nome_tarefa);
     }
 }
+
+Job* adicionar_job(Orquestrador *orq, int job_id, int pid, char *nome_tarefa) {
+    if (orq == NULL || nome_tarefa == NULL) {
+        return NULL;
+    }
+
+    if (orq->qtd_jobs >= 100) {
+        return NULL;
+    }
+
+    int i = orq->qtd_jobs;
+
+    orq->jobs[i].job_id = job_id;
+    orq->jobs[i].pid = pid;
+    orq->jobs[i].nome_tarefa = nome_tarefa;
+
+    orq->qtd_jobs++;
+
+    return &orq->jobs[i];
+}
