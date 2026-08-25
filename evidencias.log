@@ -1,0 +1,46 @@
+Script started on 2026-08-24 22:02:44-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="139" LINES="20"]
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ date
+[?2004lMon Aug 24 22:02:54 -03 2026
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [7mwhoami[27mwhoami
+[?2004llaura
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [7mpwd[27mpwd
+[?2004l/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ make clean
+[?2004lrm -rf obj bin
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ make
+[?2004lmkdir -p obj
+gcc -Wall -std=c99 -c src/fila.c -o obj/fila.o -Iinclude
+mkdir -p obj
+gcc -Wall -std=c99 -c src/tarefas.c -o obj/tarefas.o -Iinclude
+mkdir -p obj
+gcc -Wall -std=c99 -c src/jobs.c -o obj/jobs.o -Iinclude
+mkdir -p obj
+gcc -Wall -std=c99 -c src/processos.c -o obj/processos.o -Iinclude
+mkdir -p obj
+gcc -Wall -std=c99 -c src/orquestrador.c -o obj/orquestrador.o -Iinclude
+mkdir -p obj
+gcc -Wall -std=c99 -c src/main.c -o obj/main.o -Iinclude
+mkdir -p bin
+gcc -Wall -std=c99 -o bin/processflow obj/fila.o obj/tarefas.o obj/jobs.o obj/processos.o obj/orquestrador.o obj/main.o -Iinclude
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [7m./bin/processflow[27m./bin/processflow
+[?2004lprocessflow> task listar /bin/ls -l
+processflow> start listar
+[1] 481
+processflow> total 4
+-rwxrwxrwx 1 laura laura  586 Aug 24 18:46 Makefile
+drwxrwxrwx 1 laura laura 4096 Aug 24 22:03 bin
+-rwxrwxrwx 1 laura laura    0 Aug 24 22:02 evidencias.log
+drwxrwxrwx 1 laura laura 4096 Aug 24 17:03 include
+drwxrwxrwx 1 laura laura 4096 Aug 24 22:03 obj
+-rwxrwxrwx 1 laura laura 2284 Aug 24 18:20 readme
+drwxrwxrwx 1 laura laura 4096 Aug 24 18:36 src
+jobs
+[1] 481 listar
+processflow> wait 1
+processflow> jobs
+Nenhum job cadastrado.
+processflow> exti
+Comando desconhecido: exti
+processflow> exit
+[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [7mcat evidencias.log[27mcat evidencias.log
+[?2004l[?2004h]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [K]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [K]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[01;32mlaura@ideaped-Laura[00m:[01;34m/mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[00m$ [K]0;laura@ideaped-Laura: /mnt/c/Users/laura/OneDrive/Desktop/processflow/orquestrador-de-processos[
